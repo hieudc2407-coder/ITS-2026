@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # its
 
 A new Flutter project.

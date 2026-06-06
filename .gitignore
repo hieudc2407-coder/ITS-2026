@@ -44,6 +44,7 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+
 # Bỏ qua các file rác của hệ điều hành
 .DS_Store
 Thumbs.db
@@ -65,3 +66,4 @@ build/
 # Bỏ qua môi trường ảo của Python (nếu có làm Backend)
 venv/
 __pycache__/
+
