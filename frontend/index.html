@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Violation Detection - Dashboard</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">🅿️ Parking Violation Detection System</h1>
+                <p class="app-subtitle">Real-time monitoring & alert management</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-main">
+            <!-- Camera View Section -->
+            <section class="camera-section">
+                <div class="section-header">
+                    <h2>Camera Feed</h2>
+                    <span class="status-badge status-active">● LIVE</span>
+                </div>
+                <div class="camera-container">
+                    <div class="camera-feed" id="cameraFeed">
+                        <img 
+                            src="./demo.jpg" 
+                            alt="Live Camera Feed - Camera 01" 
+                            class="camera-feed-image"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block;">
+                    </div>
+                    <div class="camera-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Violations Detected</span>
+                            <span class="stat-value" id="violationCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Status</span>
+                            <span class="stat-value">Monitoring</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Violations List Section -->
+            <section class="violations-section">
+                <div class="section-header">
+                    <h2>Recent Violations</h2>
+                    <button class="btn-refresh" id="refreshBtn" title="Refresh violations list">
+                        <span>↻</span> Refresh
+                    </button>
+                </div>
+                
+                <div class="violations-controls">
+                    <div class="search-box">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            class="search-input" 
+                            placeholder="Search by plate number or location..."
+                            aria-label="Search violations"
+                        >
+                    </div>
+                    <select id="filterStatus" class="filter-select" aria-label="Filter by status">
+                        <option value="">All Statuses</option>
+                        <option value="pending">Pending</option>
+                        <option value="alerted">Alerted</option>
+                        <option value="resolved">Resolved</option>
+                    </select>
+                </div>
+
+                <div class="violations-list" id="violationsList">
+                    <div class="loading-state">
+                        <div class="spinner"></div>
+                        <p>Loading violations...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2024 Parking Detection System. All rights reserved.</p>
+            <p class="footer-status" id="footerStatus">Connecting to server...</p>
+        </footer>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

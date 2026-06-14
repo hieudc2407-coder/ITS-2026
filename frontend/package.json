@@ -1,0 +1,15 @@
+{
+  "name": "parking-detection-frontend",
+  "version": "1.0.0",
+  "description": "Frontend dashboard for parking violation detection system",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "vite": "^8.0.16"
+  }
+}

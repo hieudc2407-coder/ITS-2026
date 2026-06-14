@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Parking Violation Detection System - Modern Dashboard">
+  <title>Parking Violation Detection System</title>
+  
+  <link rel="stylesheet" href="./src/styles/dashboard.css">
+</head>
+<body>
+  <!-- Main Dashboard Container -->
+  <div class="dashboard">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" role="navigation" aria-label="Main navigation">
+      <button class="sidebar-item" title="Dashboard" aria-label="Dashboard">📊</button>
+      <button class="sidebar-item" title="Cameras" aria-label="Cameras">📹</button>
+      <button class="sidebar-item" title="Alerts" aria-label="Alerts">🚨</button>
+      <button class="sidebar-item" title="Analytics" aria-label="Analytics">📈</button>
+      <button class="sidebar-item" title="Settings" aria-label="Settings">⚙️</button>
+    </aside>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+      <h1 class="header-title">🅿️ Parking Violation Detection System</h1>
+      <div class="header-status">
+        <span>LIVE MONITORING</span>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content" role="main">
+      <!-- Left: Live Feed Section -->
+      <section class="feed-section" aria-label="Live Feed">
+        <!-- Feed Header -->
+        <div class="feed-header">
+          <h2 class="feed-title">Live CCTV Feed</h2>
+          <div class="feed-controls">
+            <button class="control-btn" aria-label="Zoom in">🔍 Zoom</button>
+            <button class="control-btn" aria-label="Record">⏹️ Record</button>
+          </div>
+        </div>
+
+        <!-- Live Feed Container -->
+        <div class="live-feed violation-active">
+          <img 
+            src="./demo.jpg" 
+            alt="Live CCTV Feed - Camera 01 Main Entrance" 
+            class="live-feed-image"
+            style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block;">
+          <div class="live-feed-inner">
+            <div class="feed-label">CAMERA 01 - MAIN ENTRANCE</div>
+            
+            <!-- Violation Overlay with Red Bounding Box -->
+            <div class="violation-overlay">
+              <div class="violation-overlay-label">⚠️ VIOLATION DETECTED</div>
+              <div class="violation-overlay-text">
+                <strong>GMC Terrain - 51A-987.65</strong><br>
+                Parking violation at ZONE A (Main Entrance)<br>
+                <strong>Owner:</strong> Nguyễn Đức Hoàng
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feed Statistics Strip -->
+        <div class="feed-stats">
+          <div class="feed-stat-item">
+            <div class="feed-stat-label">Violations Detected</div>
+            <div class="feed-stat-value">4</div>
+          </div>
+          <div class="feed-stat-item">
+            <div class="feed-stat-label">Active Violations</div>
+            <div class="feed-stat-value">3</div>
+          </div>
+          <div class="feed-stat-item">
+            <div class="feed-stat-label">Current Vehicle</div>
+            <div class="feed-stat-value">GMC Terrain</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: Alerts Panel -->
+      <aside class="alerts-panel" aria-label="Violation Alerts">
+        <!-- Alerts Header -->
+        <div class="alerts-header">
+          <h2 class="alerts-title">Violation Alerts</h2>
+          <div class="alerts-count">4</div>
+        </div>
+
+        <!-- Alerts List -->
+        <div class="alerts-list" id="alerts-list" role="region" aria-label="List of violation alerts">
+          <!-- Alert cards will be rendered here by JavaScript -->
+          <div style="display: flex; align-items: center; justify-content: center; height: 300px; color: #a0a0a0;">
+            <span>Loading alerts...</span>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Statistics Footer -->
+    <footer class="stats-footer" role="contentinfo" aria-label="Statistics">
+      <div class="stat-card">
+        <div class="stat-card-label">Violations Today</div>
+        <div class="stat-card-value" id="stat-violations-today">4</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-card-label">Violations This Week</div>
+        <div class="stat-card-value">18</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-card-label">Active Cameras</div>
+        <div class="stat-card-value">6</div>
+      </div>
+
+      <div class="trend-chart-card">
+        <div class="trend-chart-title">Last 7 Days Violations Trend</div>
+        <div class="trend-chart-bars" id="trend-chart">
+          <!-- Chart bars will be rendered here by JavaScript -->
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modal Container (created by JavaScript) -->
+  <!-- Will be inserted here dynamically -->
+
+  <!-- Scripts -->
+  <script type="module" src="/src/dashboard.ts"></script>
+</body>
+</html>
